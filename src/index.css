@@ -1,0 +1,47 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1c0c2a;
+  cursor: none;
+  --degrees: 270;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+.rounded{
+  width: 40px;
+  position: fixed;
+  z-index: 1;
+  height: 40px;
+  background-color: #1c0c2a;
+  box-shadow: 0 0 0.428vw 0 #9affdc40 inset, 0 0 0.428vw 0 #9affdc40;
+  animation: bubble 6s infinite ease-in-out;
+  animation-direction: reverse;
+}
+@keyframes bubble {
+  0% {border-radius: 20px 30px 23px 30px}
+  10% {border-radius: 23px 30px 23px 30px}
+  20% {border-radius: 25px 27px 25px 33px}
+  30% {border-radius: 25px 25px 25px 25px}
+  40% {border-radius: 34px 25px 34px 25px}
+  50% {border-radius: 30px 33px 30px 23px}
+  60% {border-radius: 30px 30px 30px 30px}
+  70% {border-radius: 30px 30px 30px 40px}
+  80% {border-radius: 30px 41px 30px 40px}
+  90% {border-radius: 40px 41px 30px 40px}
+  100% {border-radius: 40px 41px 40px 40px}
+}
+.squeezeLeft{
+  border-radius: 14px 40px 14px 40px !important;
+}
+.squeezeUp {
+  border-radius: 40px 14px 40px 14px !important;
+}
+.rounded:hover {
+  opacity: 0.6;
+}
