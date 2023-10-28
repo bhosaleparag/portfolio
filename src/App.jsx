@@ -11,19 +11,29 @@ import humanImg from "./assets/human_log.png";
 function App() {
   return (
     <div className="App">
-    <div className="left"></div>
-      <div className="right slide-in-right">
-      <div className="logo">
-        <img src={reactLogo} className="reactLogo"/>
-        <img src={htmlLogo} className="htmlLogo"/>
-        <img src={JSLogo} className="JSLogo"/>
-        <img src={vsLogo} className="vsLogo"/>
-        <img src={cssLogo} className="cssLogo"/>
-        <img src={linuxLogo} className="linuxLogo"/>
-        <img src={gitLogo} className="gitLogo"/>
-
-      </div>
-        <img src={humanImg} className="humanImg" />
+      <div className="firstPage">
+        <div className="left slide-in-left">
+          <span className="mesHi">Hello There,</span>
+          <span className="name">I'm Parag</span>
+          <span className="discription">
+            Passionate React.js developer with a year of experience creating
+            clean, engaging interfaces. Eager to collaborate on innovative
+            projects.
+            <span className="fontColor"> Let's connect!</span>
+          </span>
+        </div>
+        <div className="right slide-in-right">
+          <div className="logo">
+            <img src={reactLogo} className="reactLogo" />
+            <img src={htmlLogo} className="htmlLogo" />
+            <img src={JSLogo} className="JSLogo" />
+            <img src={vsLogo} className="vsLogo" />
+            <img src={cssLogo} className="cssLogo" />
+            <img src={linuxLogo} className="linuxLogo" />
+            <img src={gitLogo} className="gitLogo" />
+          </div>
+          <img src={humanImg} className="humanImg" />
+        </div>
       </div>
     </div>
   );
