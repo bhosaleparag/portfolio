@@ -12,14 +12,32 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
+body{
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar{
+  display: none;
+}
+
+.bgImg{
+  width:100%;
+  height:100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+
+/* curser style */
 .rounded{
   width: 40px;
   position: fixed;
   z-index: 1;
   height: 40px;
   background-color: #1c0c2a;
-  box-shadow: 0 0 0.428vw 0 #9affdc40 inset, 0 0 0.428vw 0 #9affdc40;
+  box-shadow: 0 0 0.428vw 0 #9affdc75 inset, 0 0 0.428vw 0 #9affdc75;
   animation: bubble 6s infinite ease-in-out;
   animation-direction: reverse;
 }
@@ -45,3 +63,101 @@
 .rounded:hover {
   opacity: 0.6;
 }
+
+
+.App{
+  background-image: url(./assets/pxfuel.jpg);
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-size: contain;
+}
+
+
+.right, .left {
+  width: 50%;
+}
+.right{
+  position: relative;
+}
+
+/* human image style */
+.humanImg{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  height: 180px;
+}
+.htmlLogo, .JSLogo, .cssLogo, .gitLogo, .linuxLogo, .vsLogo{
+  height: 55px;
+  position: absolute;
+}
+.htmlLogo{
+  top: 58px;
+  left: 108px;
+  transform: rotate(326deg);
+}
+.JSLogo {
+  top: 58px;
+  left: 251px;
+  transform: rotate(28deg);
+}
+.vsLogo {
+  top: 180px;
+  left: 30px;
+}
+.gitLogo {
+  bottom: 51px;
+  height: 65px;
+  right: 110px;
+  transform: rotate(148deg);
+}
+.cssLogo {
+  top: 184px;
+  right: 51px;
+  transform: rotate(91deg);
+}
+.linuxLogo {
+  bottom: 51px;
+  height: 70px;
+  left: 102px;
+  transform: rotate(213deg);
+}
+.reactLogo{
+  height: 420px;
+}
+.logo {
+  height: 420px;
+  width: 420px;
+  animation: spin 15s linear infinite;
+  position: relative;
+  top: 15%;
+  left: 25%;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+.slide-in-right {
+	animation: slide-in-right 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+ @keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
