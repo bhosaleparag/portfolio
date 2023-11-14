@@ -6,12 +6,10 @@ const Cursor = () => {
     const cursor = cursorRef.current;
     const mouseY = e.clientY;
     const mouseX = e.clientX;
-    const cursorWidth = cursor.offsetWidth;
-    const cursorHeight = cursor.offsetHeight;
-    const maxX = window.innerWidth - (cursorWidth); // horizontal size screen
-    const maxY = window.innerHeight - (cursorHeight); // virtical size screen
-    const newX = Math.min(maxX, Math.max(0, mouseX - cursorWidth / 2));
-    const newY = Math.min(maxY, Math.max(0, mouseY - cursorHeight / 2));
+    const maxX = window.innerWidth - 40; // horizontal size screen
+    const maxY = window.innerHeight - 40; // virtical size screen
+    const newX = Math.min(maxX, Math.max(0, mouseX - 20));
+    const newY = Math.min(maxY, Math.max(0, mouseY - 20));
     if(newX == 0 || newX == maxX){
       cursor.className = 'cursor rounded squeezeLeft'
     }else if(newY == maxY || newY == 0){

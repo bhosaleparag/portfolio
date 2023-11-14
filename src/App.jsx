@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import reactLogo from "./assets/react-academy.svg";
 import htmlLogo from "./assets/html-1.svg";
 import JSLogo from "./assets/javascript-1.svg";
@@ -9,10 +9,29 @@ import vsLogo from "./assets/visual-studio-code-1.svg";
 import humanImg from "./assets/human_log.png";
 
 function App() {
+  const [scrollY, setScrollY] = useState(0);
+  const [active, setIsActive] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const newY = Math.round(window.scrollY / 100); 
+      setScrollY(newY);
+    });
+  }, []);
+  useEffect(() => {
+    console.log(scrollY);
+  },[scrollY])
+  const shouldActive = useMemo(() => scrollY >  2 && !active,[scrollY, active]);
+  const shouldDeavtive = useMemo(() => scrollY < 3 && active,[scrollY, active]);
+  if (shouldActive) {
+    setIsActive(true);
+  }else if(shouldDeavtive){
+    setIsActive(false);
+  }
   return (
     <div className="App">
-      <div className="firstPage">
-        <div className="left slide-in-left">
+      <section className="firstPage">
+        <div className={`left  ${active ? "slide-out-left" : "slide-in-left" }`}>
           <span className="mesHi">Hello There,</span>
           <span className="name">I'm Parag</span>
           <span className="discription">
@@ -22,7 +41,7 @@ function App() {
             <span className="fontColor"> Let's connect!</span>
           </span>
         </div>
-        <div className="right slide-in-right">
+        <div className={`right ${active ? "slide-out-right" : "slide-in-right" }`}>
           <div className="logo">
             <img src={reactLogo} className="reactLogo" />
             <img src={htmlLogo} className="htmlLogo" />
@@ -34,9 +53,10 @@ function App() {
           </div>
           <img src={humanImg} className="humanImg" />
         </div>
-      </div>
+      </section>
+      <section className="secondPage"></section>
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);

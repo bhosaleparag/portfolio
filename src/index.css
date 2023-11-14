@@ -17,6 +17,9 @@ body{
   margin: 0;
   padding: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 body::-webkit-scrollbar{
   display: none;
 }
@@ -35,9 +38,11 @@ body::-webkit-scrollbar{
   z-index: 1;
   height: 40px;
   background-color: #1c0c2a;
-  box-shadow: 0 0 0.428vw 0 #9affdc75 inset, 0 0 0.428vw 0 #9affdc75;
+  box-shadow: 0 0 0.428vw 0 #4cd5fa inset, 0 0 0.428vw 0 #4cd5fa;
   animation: bubble 6s infinite ease-in-out;
   animation-direction: reverse;
+  pointer-events: none;
+  opacity: 0.6;
 }
 @keyframes bubble {
   0% {border-radius: 20px 30px 23px 30px}
@@ -93,6 +98,9 @@ body::-webkit-scrollbar{
 }
 .fontColor{
   color: var(--fontColor);
+}
+.secondPage{
+  height: 100vh;
 }
 
 /* spinning react logo style */
@@ -158,7 +166,6 @@ body::-webkit-scrollbar{
 }
 
 
-
 .slide-in-left {
 	animation: slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
@@ -203,4 +210,29 @@ body::-webkit-scrollbar{
     opacity: 1;
   }
 }
-
+.slide-out-left {
+	animation: slide-out-left 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+.slide-out-right {
+	animation: slide-out-right 1.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+}
