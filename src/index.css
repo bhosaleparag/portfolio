@@ -2,8 +2,8 @@
 :root {
   font-family: Quicksand, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #252734;
+  color: #ffffff;
+  background-color: #1c1d27;
   cursor: none;
   --fontColor: #ffaf29;
   font-synthesis: none;
@@ -99,9 +99,6 @@ body::-webkit-scrollbar{
 .fontColor{
   color: var(--fontColor);
 }
-.secondPage{
-  height: 100vh;
-}
 
 /* spinning react logo style */
 .humanImg{
@@ -165,7 +162,231 @@ body::-webkit-scrollbar{
   }
 }
 
+/* ------------------------------- Second Page ---------------------------------- */
 
+.secondPage {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+header{
+  font-size: 60px;
+  font-weight: 600;
+  color: var(--fontColor);
+  text-align: center;
+}
+
+/*                     -------- first project -----------               */
+.project1 {
+  display: flex;
+  align-items: center;
+  margin: 25px 0px;
+  gap: 10px;
+  justify-content: center;
+}
+.projectCard{
+  background-color: #32343e;
+  height: 400px;
+  width: 400px;
+  padding: 5px;
+}
+.projectCard > p{
+  font-size: 35px;
+  padding: 17px 0px;
+  margin: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+.projectImg{
+  width: 100%;
+  position: relative;
+  background-color: #cccccc;
+  height: 80%;
+  padding: .8px;
+}
+.projectImg > img{
+  position: absolute; 
+  object-fit: fill;
+}
+.projectImgScore {
+  left: 29px;
+  height: 110px;
+  width: 168px;
+}
+.projectImgNavbar{
+  height: 99.7%;
+}
+.projectImgLogin{
+  right: 1px;
+  height: 120px;
+  width: 99px;
+}
+.projectImgFeedback{
+  right: 101px;
+  height: 120px;
+  width: 103px;
+}
+.projectImgSetting {
+  top: 111.5px;
+  left: 7.3%;
+  height: 120.5px;
+  width: 167px;
+}
+.projectImgGame1{
+  top: 121.5px;
+  right: 1px;
+  height: 110.5px;
+  width: 203.5px;
+}
+.projectImgGame2 {
+  right: 1px;
+  bottom: 0.5px;
+  height: 88px;
+  width: 92.5%;
+}
+.description {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  display: flex;
+  background-color: #ffaf29eb;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+}
+.detail{
+  height: 60%;
+  width: 70%;
+  text-align: center;
+}
+.moreDetailbtn {
+  height: 80px;
+  width: 80px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.circular{
+  height:50px;
+  width: 50px;
+  cursor: none;
+  border-radius: 50%;
+  background-color: #ffaf29eb;
+  border: 3px solid #fff;
+}
+
+ /*              -------- second project -----------           */
+.projectImg2{
+  background-color: var(--fontColor)
+}
+
+
+ .projectImgsearch {
+  left: 1px;
+  height: 37px;
+  width: 94px;
+}
+.projectImgUrl {
+  right: 1px;
+  height: 37px;
+  width: 304px;
+}
+.projectImgfoodHomePage {
+  top: 40px;
+  left: 1px;
+  height: 146px;
+  width: 225px;
+}
+.projectImgdishes {
+  left: 1px;
+  bottom: 3px;
+  height: 52px;
+  width: 225px;
+}
+.projectImgingredient {
+  left: 1px;
+  bottom: 57px;
+  height: 76px;
+  width: 225px;
+}
+.projectImgfoodDis {
+  transform: rotate(90deg);
+  right: -52px;
+  top: 93px;
+  height: 172px;
+  width: 279px;
+}
+
+
+
+.slide-out-fwd-center {
+	animation: slide-out-fwd-center 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+@keyframes slide-out-fwd-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+.bounce-in-right {
+	animation: bounce-in-right 1.1s both;
+  animation-delay: .7s;
+}
+@keyframes bounce-in-right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+}
+.focus-in-contract {
+	animation: focus-in-contract 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes focus-in-contract {
+  0% {
+    letter-spacing: 0.7em;
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
 .slide-in-left {
 	animation: slide-in-left 1.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
