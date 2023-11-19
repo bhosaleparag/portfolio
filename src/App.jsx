@@ -1,13 +1,7 @@
 import React, { useState, useEffect, useMemo } from "react";
-import reactLogo from "./assets/react-academy.svg";
-import htmlLogo from "./assets/html-1.svg";
-import JSLogo from "./assets/javascript-1.svg";
-import gitLogo from "./assets/git-icon.svg";
-import linuxLogo from "./assets/tux.svg";
-import cssLogo from "./assets/css-3.svg";
-import aLogo from "./assets/arrow.svg";
-import vsLogo from "./assets/visual-studio-code-1.svg";
+import Logo from "./Logo";
 import humanImg from "./assets/human_log.png";
+import aLogo from "./assets/arrow.svg";
 import score from "./assets/project/score.png";
 import navbar from "./assets/project/navbar.png";
 import login from "./assets/project/login.png";
@@ -37,9 +31,9 @@ function App() {
   const handleButtonClick = (val) => {
     setIsButtonClicked([!isButtonClicked[0], val]);
   };
-  console.log(isButtonClicked);
   return (
     <div className="App">
+    <div className="menuBar"></div>
       <section className="firstPage">
         <div
           className={`left  ${
@@ -60,22 +54,13 @@ function App() {
             scrollY === 0 ? "slide-in-right" : "slide-out-right"
           }`}
         >
-          <div className="logo">
-            <img src={reactLogo} className="reactLogo" />
-            <img src={htmlLogo} className="htmlLogo" />
-            <img src={JSLogo} className="JSLogo" />
-            <img src={vsLogo} className="vsLogo" />
-            <img src={cssLogo} className="cssLogo" />
-            <img src={linuxLogo} className="linuxLogo" />
-            <img src={gitLogo} className="gitLogo" />
-          </div>
+          <Logo />
           <img src={humanImg} className="humanImg" />
         </div>
       </section>
       <section className="secondPage">
-        <header
-          className={`${scrollY >= 1 ? "focus-in-contract" : ""}`}
-        >
+          <div className={`roller ${scrollY >= 9 ? "falling" : ""}`}/>
+        <header className={`${scrollY >= 1 ? "focus-in-contract" : ""}`}>
           Personal Projects
         </header>
         <div className="project1">
@@ -113,7 +98,7 @@ function App() {
           </div>
         </div>
         <div className="project1">
-          <div
+          <div style={{backgroundColor: "#1c1d27"}}
             className={`projectCard ${scrollY >= 10 ? "slide-in-left" : ""}`}
           >
             <p>Food Info</p>
@@ -141,6 +126,11 @@ function App() {
             </div>
           </div>
         </div>
+      </section>
+      <section className="thirdPage">
+        <header className={`${scrollY >= 21 ? "focus-in-contract" : ""}`}>
+          Achievement
+        </header>
       </section>
     </div>
   );

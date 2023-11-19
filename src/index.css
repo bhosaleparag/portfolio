@@ -8,6 +8,7 @@
   --fontColor: #ffaf29;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  font-size: 21px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -22,6 +23,57 @@ html {
 }
 body::-webkit-scrollbar{
   display: none;
+}
+.menuBar{
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  background-color:#60d9fa;
+  border-radius: 50%;
+  border: 0px;
+  right: 20px;
+  bottom: 20px;
+}
+.roller{
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background-color: var(--fontColor);
+  border-radius: 50%;
+  border: 0px;
+  right: 0px;
+  top: 60vh;
+  opacity: 0;
+}
+.falling{
+  opacity: 1;
+  animation: moveUpDown 1.8s linear 0s 1 normal, roll 8s linear 1.8s 1 normal;
+}
+@keyframes moveUpDown {
+  0%{top: 60vh;}
+  100%{top: 158vh;}
+}
+@keyframes roll {
+  0%{
+    top: 158vh;
+    right: 0px;
+  }
+  25%{
+    top: 169vh;
+    right: 400px;
+  }
+  50%{
+    top: 179.5vh;
+    right: 800px;
+  }
+  75%{
+    top: 190.5vh;
+    right: 1200px;
+  }
+  100%{
+    top: 201vh;
+    right: 1600px;
+  }
 }
 .firstPage{
   background-image: url(./assets/pxfuel.jpg);
@@ -81,13 +133,13 @@ body::-webkit-scrollbar{
   justify-content: center;
   flex-direction: column;
 }
-.mesHi{
-  font-size: 30px;
+.mesHi {
+  font-size: 50px;
   font-weight: 600;
   padding-left: 20px;
 }
 .name{
-  font-size: 60px;
+  font-size: 80px;
   font-weight: 600;
   color: var(--fontColor);
   padding: 0px 0px 10px 20px;
@@ -101,53 +153,53 @@ body::-webkit-scrollbar{
 }
 
 /* spinning react logo style */
-.humanImg{
+.humanImg {
   position: absolute;
-  top: 35%;
-  left: 50%;
-  height: 180px;
+  top: 38.5%;
+  left: 51.5%;
+  height: 207px;
 }
 .htmlLogo, .JSLogo, .cssLogo, .gitLogo, .linuxLogo, .vsLogo{
-  height: 55px;
+  height: 75px;
   position: absolute;
 }
-.htmlLogo{
-  top: 58px;
-  left: 108px;
+.htmlLogo {
+  top: 80px;
+  left: 137px;
   transform: rotate(326deg);
 }
 .JSLogo {
-  top: 58px;
-  left: 251px;
+  top: 84px;
+  left: 317px;
   transform: rotate(28deg);
 }
 .vsLogo {
-  top: 180px;
-  left: 30px;
+  top: 229px;
+  left: 34px;
 }
 .gitLogo {
-  bottom: 51px;
-  height: 65px;
-  right: 110px;
+  bottom: 65px;
+  height: 97px;
+  right: 141px;
   transform: rotate(148deg);
 }
 .cssLogo {
-  top: 184px;
-  right: 51px;
+  top: 235px;
+  right: 74px;
   transform: rotate(91deg);
 }
 .linuxLogo {
-  bottom: 51px;
-  height: 70px;
-  left: 102px;
+  bottom: 54px;
+  height: 110px;
+  left: 121px;
   transform: rotate(213deg);
 }
 .reactLogo{
-  height: 420px;
+  height: 540px;
 }
 .logo {
-  height: 420px;
-  width: 420px;
+  height: 540px;
+  width: 540px;
   animation: spin 15s linear infinite;
   position: relative;
   top: 15%;
@@ -167,6 +219,7 @@ body::-webkit-scrollbar{
 .secondPage {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(0.47turn, #1c1d27 50%, #32343e 50% 90%);
   gap: 7px;
 }
 header{
@@ -186,13 +239,14 @@ header{
 }
 .projectCard{
   background-color: #32343e;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  border-radius: 10px 10px 0px 0px;
+  width: 500px;
   padding: 5px;
 }
 .projectCard > p{
-  font-size: 35px;
-  padding: 17px 0px;
+  font-size: 45px;
+  padding: 21px 0px;
   margin: 0px;
   font-weight: bold;
   text-align: center;
@@ -209,34 +263,34 @@ header{
   object-fit: fill;
 }
 .projectImgScore {
-  left: 29px;
-  height: 110px;
-  width: 168px;
+  left: 37px;
+  height: 138px;
+  width: 219px;
 }
 .projectImgNavbar{
   height: 99.7%;
 }
-.projectImgLogin{
+.projectImgLogin {
   right: 1px;
-  height: 120px;
-  width: 99px;
+  height: 138px;
+  width: 116px;
 }
-.projectImgFeedback{
-  right: 101px;
-  height: 120px;
-  width: 103px;
+.projectImgFeedback {
+  right: 119px;
+  height: 137.5px;
+  width: 125px;
 }
 .projectImgSetting {
-  top: 111.5px;
-  left: 7.3%;
-  height: 120.5px;
-  width: 167px;
+  top: 140.5px;
+  left: 7.5%;
+  height: 170.5px;
+  width: 218px;
 }
-.projectImgGame1{
-  top: 121.5px;
+.projectImgGame1 {
+  top: 140.5px;
   right: 1px;
-  height: 110.5px;
-  width: 203.5px;
+  height: 170.5px;
+  width: 243px;
 }
 .projectImgGame2 {
   right: 1px;
@@ -245,16 +299,18 @@ header{
   width: 92.5%;
 }
 .description {
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   border-radius: 50%;
   display: flex;
   background-color: #ffaf29eb;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
+  gap: 10px;
 }
 .detail{
+  font-size: 20px;
   height: 60%;
   width: 70%;
   text-align: center;
@@ -280,44 +336,47 @@ header{
 .projectImg2{
   background-color: var(--fontColor)
 }
-
-
- .projectImgsearch {
+.projectImgsearch {
   left: 1px;
   height: 37px;
-  width: 94px;
+  width: 107px;
 }
 .projectImgUrl {
   right: 1px;
   height: 37px;
-  width: 304px;
+  width: 390.5px;
 }
 .projectImgfoodHomePage {
   top: 40px;
   left: 1px;
-  height: 146px;
-  width: 225px;
+  height: 185px;
+  width: 257px;
 }
 .projectImgdishes {
   left: 1px;
   bottom: 3px;
-  height: 52px;
-  width: 225px;
+  height: 68px;
+  width: 257px;
 }
 .projectImgingredient {
   left: 1px;
-  bottom: 57px;
-  height: 76px;
-  width: 225px;
+  bottom: 73px;
+  height: 101px;
+  width: 257px;
 }
 .projectImgfoodDis {
   transform: rotate(90deg);
-  right: -52px;
-  top: 93px;
-  height: 172px;
-  width: 279px;
+  right: -58px;
+  top: 101px;
+  height: 238px;
+  width: 358px;
 }
 
+/* -------------------------------- Third Page ----------------------------------- */
+
+.thirdPage{
+  height: 100vh;
+}
 
 
 .slide-out-fwd-center {
