@@ -1,23 +1,18 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Logo from "./Logo";
 import humanImg from "./assets/human_log.png";
+import menu from "./assets/addition.svg";
+import feedbackBtn from "./assets/feedback-svgrepo-com.svg";
+import aboutBtn from "./assets/about-faq-help-svgrepo-com.svg";
+import tataLogo from "./assets/tata-consultancy-services-1.svg";
+import react from "./assets/react-2.svg";
 import aLogo from "./assets/arrow.svg";
-import score from "./assets/project/score.png";
-import navbar from "./assets/project/navbar.png";
-import login from "./assets/project/login.png";
-import feedback from "./assets/project/feedback.png";
-import game1 from "./assets/project/game1.png";
-import setting from "./assets/project/setting.png";
-import game2 from "./assets/project/game2.png";
-import search from "./assets/project/search.png";
-import foodDis from "./assets/project/foodDis.png";
-import foodHomePage from "./assets/project/foodHomePage.png";
-import dishes from "./assets/project/dishes.png";
-import url from "./assets/project/url.png";
-import ingredient from "./assets/project/ingredient.png";
+import Project1 from "./Project1";
+import Project2 from "./Project2";
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
+  const [menuClick, setMenuClick] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState([false, ""]);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -31,9 +26,20 @@ function App() {
   const handleButtonClick = (val) => {
     setIsButtonClicked([!isButtonClicked[0], val]);
   };
+  const showMenu = () => {
+    setMenuClick(!menuClick)
+  };
   return (
     <div className="App">
-    <div className="menuBar"></div>
+      <div className="menuBar">
+        <div className={`menuBarFeedbackBtn ${menuClick ? "moveMenuIcon" : ""}`} onClick={showMenu} >
+        <img src={feedbackBtn} />
+        </div>
+        <div className={`menuBarAbout ${menuClick ? "moveMenuIcon" : ""}`} onClick={showMenu}>
+          <img src={aboutBtn}  />
+        </div>
+        <img src={menu} className={`${menuClick ? "showMenu" : ""}`} onClick={showMenu}/>
+      </div>
       <section className="firstPage">
         <div
           className={`left  ${
@@ -59,23 +65,15 @@ function App() {
         </div>
       </section>
       <section className="secondPage">
-          <div className={`roller ${scrollY >= 9 ? "falling" : ""}`}/>
+          <div className={`roller ${scrollY >= 9 ? "falling" : ""}`}><img src={react}/></div>
         <header className={`${scrollY >= 1 ? "focus-in-contract" : ""}`}>
           Personal Projects
         </header>
         <div className="project1">
           <div
             className={`projectCard ${scrollY >= 2 ? "slide-in-left" : ""}`}>
-            <p>Typing Trainer</p>
-            <div className="projectImg">
-              <img src={score} className="projectImgScore" />
-              <img src={navbar} className="projectImgNavbar" />
-              <img src={login} className="projectImgLogin" />
-              <img src={feedback} className="projectImgFeedback" />
-              <img src={game1} className="projectImgGame1" />
-              <img src={game2} className="projectImgGame2" />
-              <img src={setting} className="projectImgSetting" />
-            </div>
+            
+            <Project1 />
           </div>
           <div
             className={`description ${
@@ -101,15 +99,7 @@ function App() {
           <div style={{backgroundColor: "#1c1d27"}}
             className={`projectCard ${scrollY >= 10 ? "slide-in-left" : ""}`}
           >
-            <p>Food Info</p>
-            <div className="projectImg projectImg2">
-              <img src={search} className="projectImgsearch" />
-              <img src={foodHomePage} className="projectImgfoodHomePage" />
-              <img src={ingredient} className="projectImgingredient" />
-              <img src={dishes} className="projectImgdishes" />
-              <img src={foodDis} className="projectImgfoodDis" />
-              <img src={url} className="projectImgUrl" />
-            </div>
+            <Project2/>
           </div>
           <div 
             className={`description ${
@@ -129,8 +119,9 @@ function App() {
       </section>
       <section className="thirdPage">
         <header className={`${scrollY >= 21 ? "focus-in-contract" : ""}`}>
-          Achievement
+          About
         </header>
+        <img src={tataLogo} className="tataLogo" />
       </section>
     </div>
   );
