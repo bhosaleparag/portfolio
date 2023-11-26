@@ -119,7 +119,9 @@ body::-webkit-scrollbar{
   display: flex;
   width: 100vw;
   height: 100vh;
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 /* curser style */
@@ -415,10 +417,52 @@ header{
 
 .thirdPage{
   height: 100vh;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+} 
 .tataLogo{
   height: 100px;
+  width: 200px;
 }
+.experienceCard > div{
+  padding: 7px;
+  margin-top: 10px;
+  width: 95%;
+}
+.experienceCard{
+  display: flex;
+  width: 25%;
+  align-items: center;
+  border: 2px solid #6d73ff;
+  gap: 10px;
+  background: #32343e;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.experienceDetail{
+  width: 100px;
+  height: 140%;
+  font-size: medium;
+  padding-top: 0px;
+}
+.experienceLocation >img{
+  height: 23px;
+}
+.experienceLocation{
+  display: flex;
+  float: right;
+  font-size: 16px;
+}
+.experienceDate{
+  float: left;
+  font-size: 17px;
+}
+
+
+/* -------------------------------- animations ----------------------------------- */
 
 
 .slide-out-fwd-center {
