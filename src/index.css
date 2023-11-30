@@ -419,27 +419,39 @@ header{
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url(./assets/experiencebg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   align-items: center;
   gap: 30px;
 } 
-.tataLogo{
-  height: 100px;
-  width: 200px;
+.tataLogo {
+  margin-left: 12%;
+  height: 148px;
+  width: 272px;
 }
-.experienceCard > div{
+.card_face > div{
   padding: 7px;
   margin-top: 10px;
   width: 95%;
 }
-.experienceCard{
-  display: flex;
-  width: 25%;
-  align-items: center;
+.card_face{
+  position: absolute;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+}
+.experienceCard:hover {
+  transform: rotateY(0.5turn);
+}
+.experienceCard {
+  position: relative;
   border: 2px solid #6d73ff;
-  gap: 10px;
-  background: #32343e;
-  justify-content: center;
-  flex-direction: column;
+  height: 470px;
+  width: 24%;
+  transition: 1s ease-in-out;
+  background-color: #1c0c2a;
+  transform-style: preserve-3d;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .experienceDetail{
@@ -451,14 +463,20 @@ header{
 .experienceLocation >img{
   height: 23px;
 }
-.experienceLocation{
-  display: flex;
+.experienceLocation{  
+  display: flex;  
   float: right;
   font-size: 16px;
 }
 .experienceDate{
   float: left;
   font-size: 17px;
+}
+.backsideCard{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(0.5turn);
 }
 
 

@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useMemo } from "react";
-import Logo from "./Logo";
+import Logo from "./pages/Logo";
 import humanImg from "./assets/human_log.png";
 import menu from "./assets/addition.svg";
 import feedbackBtn from "./assets/feedback-svgrepo-com.svg";
 import aboutBtn from "./assets/about-faq-help-svgrepo-com.svg";
-import tataLogo from "./assets/tcs-logo-white-trans.png";
 import react from "./assets/react-2.svg";
 import aLogo from "./assets/arrow.svg";
-import locationLogo from "./assets/location.svg";
-import Project1 from "./Project1";
-import Project2 from "./Project2";
+import Project1 from "./pages/Project1";
+import Project2 from "./pages/Project2";
+import Experience from "./pages/Experience";
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -163,33 +162,10 @@ function App() {
         <header className={`${scrollY >= 21 ? "focus-in-contract" : ""}`}>
           Experience
         </header>
-        <div className="experienceCard">
-          <img src={tataLogo} className="tataLogo" />
-          <div>
-            <div className="experienceDate">11/2023 - Present</div>
-            <div className="experienceLocation">
-              <img src={locationLogo} />
-              Navi Mumbai
-            </div>
-          </div>
-          <div className="experienceDetail">
-            <ul>
-              <li>
-                Our team has successfully completed the migration of an SDM
-                application for our client, SBI. The application was migrated
-                from JSP to React
-              </li>
-              <li>
-                Joined as a fresher and gained diversified experience across
-                different domains which used React JS technology
-              </li>
-              <li>
-                Improved efficiency of code development process through
-                automation of system build and deployment.
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Experience/>
+      </section>
+      <section className="fourPage">
+
       </section>
     </div>
   );
