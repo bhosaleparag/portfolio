@@ -479,6 +479,28 @@ header{
   transform: rotateY(0.5turn);
 }
 
+.backsideCard > img{
+  height:160px;
+  width:368px;
+}
+.backsideCard img:nth-child(2) {
+  height:130px;
+}
+.backsideCard img:nth-child(3) {
+  height:169px;
+}
+
+
+/* -------------------------------- fourth page ----------------------------------- */
+.fourPage{
+  height:100vh;
+}
+.aboutMePara{
+  width: 35%;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
 
 /* -------------------------------- animations ----------------------------------- */
 

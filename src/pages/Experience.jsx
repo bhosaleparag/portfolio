@@ -1,7 +1,9 @@
 import React from 'react'
 import tataLogo from "../assets/tcs-logo-white-trans.png";
 import locationLogo from "../assets/location.svg";
-import react from "../assets/react-2.svg";
+import image1 from "../assets/IMG-20231023-WA0005.jpg";
+import image2 from "../assets/IMG-20231202-WA0006.jpg";
+import image3 from "../assets/sbiImage.jpg";
 
 export default function Experience() {
   return (
@@ -34,7 +36,9 @@ export default function Experience() {
           </div>
           </div>
           <div className="card_face backsideCard">
-                <img src={react} height={"400px"}/>
+                <img src={image1}/>
+                <img src={image3}/>
+                <img src={image2}/>
           </div>
         </div>
   )

@@ -162,10 +162,31 @@ function App() {
         <header className={`${scrollY >= 21 ? "focus-in-contract" : ""}`}>
           Experience
         </header>
-        <Experience/>
+        <Experience />
       </section>
       <section className="fourPage">
-
+        <header className={`${scrollY >= 33 ? "focus-in-contract" : ""}`}>
+          About Me
+        </header>
+        <p className="aboutMePara">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello there! I'm Parag Bhosale, and I hail from Dighanchi, my mother's
+          hometown. My childhood was predominantly spent there, and it's also
+          where I completed my high school education. When it came time for
+          graduation, I moved to Sangola, where I delved into the world of
+          programming languages. During my academic journey, I developed a keen
+          interest in coding, which eventually led me to a rewarding opportunity
+          at TCS (Tata Consultancy Services). My initial training took place in
+          Chennai, where I honed my coding skills and gained valuable insights.
+          Post-training, I embarked on a professional journey as a software
+          engineer, landing a role on the SBI project located in Navi Mumbai. In
+          this role, I specialize in utilizing technologies such as Git, Linux,
+          and my personal favorite, React JS. I find immense joy in working with
+          React and leveraging its capabilities to create innovative solutions.
+          I am passionate about continuously learning and growing in the dynamic
+          field of software development. My experiences have equipped me with a
+          solid foundation, and I look forward to contributing my skills and
+          expertise to future endeavors.
+        </p>
       </section>
     </div>
   );
