@@ -39,25 +39,6 @@ function App() {
   }
   return (
     <div className="App">
-      <div className="menuBar">
-        <div
-          className={`menuBarFeedbackBtn ${menuClick ? "moveMenuIcon" : ""}`}
-          onClick={showMenu}
-        >
-          <img src={feedbackBtn} />
-        </div>
-        <div
-          className={`menuBarAbout ${menuClick ? "moveMenuIcon" : ""}`}
-          onClick={showMenu}
-        >
-          <img src={aboutBtn} />
-        </div>
-        <img
-          src={menu}
-          className={`${menuClick ? "showMenu" : ""}`}
-          onClick={showMenu}
-        />
-      </div>
       <section className="firstPage">
         <div
           className={`left  ${
@@ -205,7 +186,7 @@ function App() {
         </header>
         <div className="achivementContent">
         <div className="achievement">
-        <div class="magic-matrix">
+        <div className={`magic-matrix ${scrollY >= 47 ? "swirl-in-fwd" : ""}`}>
           <div className="row">
             <div>21</div>
             <div>05</div>
@@ -234,13 +215,42 @@ function App() {
             <div>11</div>
           </div>
         </div>
-            <p className="matrixDis">During my 9th year, I was inspired by the mathematician Ramanujan to design a magic matrix, where rows, columns, and diagonals all add up to the same number.</p>
+            <p className={`matrixDis ${scrollY >= 47 ? "scale-in-bottom" : ""}`}>During my 9th year, I was inspired by the mathematician Ramanujan to design a magic matrix, where rows, columns, and diagonals all add up to the same number.</p>
         </div>
-        <div className="tcsRank">
+        <div className={`tcsRank ${scrollY >= 47 ? "bounce-in-right" : ""}`}>
           <p>Distinguished by my outstanding performance during the TCS Ignite training, I secured the remarkable 7th position out of a cohort comprising 260 highly skilled students. My commitment to excellence and unwavering dedication set me apart, contributing to the dynamic and collaborative learning environment of the program.</p>
         </div>
         </div>
-      </section>
+        </section>
+        <footer className="footer">
+    <div className="waves">
+      <div className="wave" id="wave1"></div>
+      <div className="wave" id="wave2"></div>
+      <div className="wave" id="wave3"></div>
+      <div className="wave" id="wave4"></div>
+    </div>
+    <div className="footerData">
+    <h2>Thanks for exploring my work!</h2>
+    <p className="footerDetail">I'm passionate about creating innovative solutions that blend functionality and design. Each project in my portfolio represents a unique challenge I've embraced, showcasing my skills in web development, design, and problem-solving. I believe in the power of collaboration and am always eager to take on new and exciting projects. If you're interested in learning more about my work, have specific inquiries, or would like to discuss potential collaborations, I'd love to connect. Feel free to reach out—I'm here to bring your ideas to life!</p>
+    </div>
+    <div className="footerBottom">
+    <ul className="social-icon">
+      <li className="social-icon__item"><a className="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li className="social-icon__item"><a className="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li className="social-icon__item"><a className="social-icon__link" href="https://www.linkedin.com/in/parag-bhosale-916878223/">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li className="social-icon__item"><a className="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <p>&copy;2023 Parag Bhosale | All Rights Reserved</p>
+    </div>
+  </footer>
     </div>
   );
 }
