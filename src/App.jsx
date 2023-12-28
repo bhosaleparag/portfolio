@@ -29,6 +29,14 @@ function App() {
   const showMenu = () => {
     setMenuClick(!menuClick);
   };
+  const Star = () => {
+    const spans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    return (
+      <>
+        {spans.map(sp => <span key={sp} className="stars"></span>)}
+      </>
+    );
+  }
   return (
     <div className="App">
       <div className="menuBar">
@@ -168,6 +176,8 @@ function App() {
         <header className={`${scrollY >= 33 ? "focus-in-contract" : ""}`}>
           About Me
         </header>
+        <Star/>
+        <div className="aboutContainer">
         <p className="aboutMePara">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello there! I'm Parag Bhosale, and I hail from Dighanchi, my mother's
           hometown. My childhood was predominantly spent there, and it's also
@@ -187,6 +197,49 @@ function App() {
           solid foundation, and I look forward to contributing my skills and
           expertise to future endeavors.
         </p>
+        </div>
+      </section>
+      <section className="fifthPage">
+      <header className={`${scrollY >= 44 ? "focus-in-contract" : ""}`}>
+          Achievements
+        </header>
+        <div className="achivementContent">
+        <div className="achievement">
+        <div class="magic-matrix">
+          <div className="row">
+            <div>21</div>
+            <div>05</div>
+            <div>23</div>
+            <div>02</div>
+            <hr className="row1"/>
+          </div>
+          <div className="row">
+            <div>07</div>
+            <div className="red">18</div>
+            <div className="red">12</div>
+            <div>14</div>
+            <hr className="row2"/>
+          </div>
+          <div className="row">
+            <div>06</div>
+            <div className="red">20</div>
+            <div className="red">01</div>
+            <div>24</div>
+            <hr className="row3"/>
+          </div>
+          <div className="row">
+            <div>17</div>
+            <div>08</div>
+            <div>15</div>
+            <div>11</div>
+          </div>
+        </div>
+            <p className="matrixDis">During my 9th year, I was inspired by the mathematician Ramanujan to design a magic matrix, where rows, columns, and diagonals all add up to the same number.</p>
+        </div>
+        <div className="tcsRank">
+          <p>Distinguished by my outstanding performance during the TCS Ignite training, I secured the remarkable 7th position out of a cohort comprising 260 highly skilled students. My commitment to excellence and unwavering dedication set me apart, contributing to the dynamic and collaborative learning environment of the program.</p>
+        </div>
+        </div>
       </section>
     </div>
   );
