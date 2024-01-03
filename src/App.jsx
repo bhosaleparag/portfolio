@@ -232,17 +232,11 @@ function App() {
     </div>
     <div className="footerBottom">
     <ul className="social-icon">
-      <li className="social-icon__item"><a className="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li className="social-icon__item"><a className="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
+      <li className="social-icon__item"><a className="social-icon__link" href="https://github.com/bhosaleparag">
+        <ion-icon name="logo-github"></ion-icon>
         </a></li>
       <li className="social-icon__item"><a className="social-icon__link" href="https://www.linkedin.com/in/parag-bhosale-916878223/">
           <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li className="social-icon__item"><a className="social-icon__link" href="#">
-          <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
     <p>&copy;2023 Parag Bhosale | All Rights Reserved</p>
