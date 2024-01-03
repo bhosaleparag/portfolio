@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Logo from "./pages/Logo";
 import humanImg from "./assets/human_log.png";
-import menu from "./assets/addition.svg";
-import feedbackBtn from "./assets/feedback-svgrepo-com.svg";
-import aboutBtn from "./assets/about-faq-help-svgrepo-com.svg";
 import react from "./assets/react-2.svg";
 import aLogo from "./assets/arrow.svg";
 import Project1 from "./pages/Project1";
@@ -12,7 +9,6 @@ import Experience from "./pages/Experience";
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
-  const [menuClick, setMenuClick] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState([false, ""]);
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -20,14 +16,15 @@ function App() {
       setScrollY(newY);
     });
   }, []);
-  useEffect(() => {
-    console.log(scrollY);
-  }, [scrollY]);
   const handleButtonClick = (val) => {
     setIsButtonClicked([!isButtonClicked[0], val]);
-  };
-  const showMenu = () => {
-    setMenuClick(!menuClick);
+    setTimeout(() => {
+      if(val == "first"){
+        window.location.href = "https://typingtrainer51.netlify.app";
+      }else if(val == "second"){
+        window.location.href = "https://main--infofood.netlify.app";
+      }
+    }, 200);
   };
   const Star = () => {
     const spans = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
