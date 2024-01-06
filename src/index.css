@@ -1021,7 +1021,7 @@ header {
     height: 140px;
   }
   .App{
-    width: 238vw;
+    width: 266vw;
   }
   .gitLogo {
     bottom: 59px;
@@ -1042,7 +1042,7 @@ header {
     font-size: 18px;
   }
   .experienceCard {
-    width: 43%;
+    width: 39%;
   }
   .aboutContainer {
     width: 90%;
