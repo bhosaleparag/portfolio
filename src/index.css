@@ -584,7 +584,7 @@ header {
 /* -------------------------------- animations ----------------------------------- */
 
 .slide-out-fwd-center {
-  animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-out-fwd-center .7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 @keyframes slide-out-fwd-center {
   0% {
