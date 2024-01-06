@@ -16,6 +16,7 @@ function App() {
       setScrollY(newY);
     });
   }, []);
+  console.log(scrollY);
   const handleButtonClick = (val) => {
     setIsButtonClicked([!isButtonClicked[0], val]);
     setTimeout(() => {
