@@ -66,9 +66,6 @@ export default function Experience() {
                 <li>REST APIs</li>
                 <li>Redux</li>
                 <li>JavaScript</li>
-                <li>CSS</li>
-                <li>HTML</li>
-                <li>Git</li>
                 <li>Jira</li>
               </ul>
             </div>
