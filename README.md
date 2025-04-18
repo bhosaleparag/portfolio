@@ -111,7 +111,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## 🤝 Contact
 
 For any queries or suggestions, feel free to reach out:
-[Your Contact Information]
++919356289160
 
 ---
-Made with ❤️ by [Your Name]
+Made with ❤️ by Parag Bhosale
