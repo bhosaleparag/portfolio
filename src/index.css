@@ -14,6 +14,19 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   overflow-x: hidden;
+
+  /* Bubble animation variables */
+  --bubble-base-size: 60px;
+  --bubble-min-size: 55px;
+  --bubble-max-size: 90px;
+  --bubble-animation-duration: 25s;
+  --bubble-animation-delay: 2s;
+  --bubble-movement-range: 300px;
+  --bubble-scale-factor: 1.2;
+  --bubble-glow-size: 20px;
+  --bubble-glow-color: rgba(77, 213, 250, 0.3);
+  --bubble-bg-color: rgba(77, 213, 250, 0.1);
+  --bubble-inner-glow-color: rgba(255, 255, 255, 0.1);
 }
 body {
   margin: 0;
@@ -97,16 +110,16 @@ body::-webkit-scrollbar {
 .rounded {
   width: 40px;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   height: 40px;
   background-color: #1c0c2a;
   box-shadow: 0 0 0.428vw 0 #4cd5fa inset, 0 0 0.428vw 0 #4cd5fa;
-  animation: bubble 6s infinite ease-in-out;
+  animation: cursorBubble 6s infinite ease-in-out;
   animation-direction: reverse;
   pointer-events: none;
   opacity: 0.6;
 }
-@keyframes bubble {
+@keyframes cursorBubble {
   0% {
     border-radius: 20px 30px 23px 30px;
   }
@@ -188,8 +201,6 @@ body::-webkit-scrollbar {
 /* spinning react logo style */
 .humanImg {
   position: absolute;
-  top: 38.5%;
-  left: 51.5%;
   height: 207px;
 }
 .htmlLogo,
@@ -257,9 +268,133 @@ body::-webkit-scrollbar {
 .secondPage {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0.47turn, #1c1d27 50%, #32343e 50% 90%);
+  background-color: #1c1d27;
   gap: 7px;
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  background: rgba(77, 213, 250, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(77, 213, 250, 0.3);
+  animation: bubble 15s linear infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bubble:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-duration: 8s;
+}
+
+.bubble:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 20%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  animation-duration: 11s;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(5) {
+  width: 75px;
+  height: 75px;
+  left: 65%;
+  animation-duration: 6s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(6) {
+  width: 95px;
+  height: 95px;
+  left: 80%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(7) {
+  width: 140px;
+  height: 140px;
+  left: 70%;
+  animation-duration: 12s;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(8) {
+  width: 65px;
+  height: 65px;
+  left: 30%;
+  animation-duration: 6s;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(9) {
+  width: 55px;
+  height: 55px;
+  left: 60%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(10) {
+  width: 130px;
+  height: 130px;
+  left: 85%;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+
+@keyframes bubble {
+  0% {
+    bottom: -100px;
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px);
+  }
+  100% {
+    bottom: 1080px;
+    transform: translateX(-200px);
+  }
+}
+
+/* Make sure project cards are above bubbles */
+.projectCard, .description {
+  position: relative;
+  z-index: 1;
+}
+
 header {
   font-size: 60px;
   font-weight: 600;
@@ -276,6 +411,8 @@ header {
   justify-content: center;
 }
 .projectCard {
+  position: relative;
+  z-index: 1;
   background-color: #32343e;
   height: 500px;
   border-radius: 10px 10px 0px 0px;
@@ -438,6 +575,11 @@ header {
   backface-visibility: hidden;
   transition: 1s ease-in-out;
 }
+.experience-container{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
 .experienceCard:hover {
   transform: rotateY(0.5turn);
 }
@@ -445,18 +587,32 @@ header {
   position: relative;
   border: 2px solid #6d73ff;
   height: 470px;
-  width: 24%;
+  width: 350px;
+  max-width: 800px;
   transition: 1s ease-in-out;
   background-color: #1c0c2a;
   transform-style: preserve-3d;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  animation: autoFlip 10s infinite;
+}
+.experienceCard h3 {
+  font-size: 24px;
+  color: var(--fontColor);
+  margin: 10px 0;
+  text-align: center;
 }
 .experienceDetail {
-  width: 100px;
-  height: 140%;
-  font-size: medium;
-  padding-top: 0px;
+  width: 90%;
+  margin: 20px auto;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.experienceDetail ul {
+  padding-left: 20px;
+}
+.experienceDetail li {
+  margin-bottom: 10px;
 }
 .experienceLocation > img {
   height: 23px;
@@ -486,6 +642,57 @@ header {
 }
 .backsideCard img:nth-child(3) {
   height: 169px;
+}
+
+.company-info {
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1c0c2a;
+  color: white;
+}
+
+.company-info h3 {
+  color: var(--fontColor);
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.company-info p {
+  margin-bottom: 25px;
+  font-size: 18px;
+}
+
+.tech-stack {
+  text-align: left;
+  width: 80%;
+}
+
+.tech-stack h4 {
+  color: var(--fontColor);
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.tech-stack ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tech-stack li {
+  background-color: rgba(77, 213, 250, 0.1);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid #4cd5fa42;
+  font-size: 16px;
 }
 
 /* -------------------------------- fourth page ----------------------------------- */
@@ -584,7 +791,7 @@ header {
 /* -------------------------------- animations ----------------------------------- */
 
 .slide-out-fwd-center {
-  animation: slide-out-fwd-center 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: slide-out-fwd-center .7s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 @keyframes slide-out-fwd-center {
   0% {
@@ -1015,11 +1222,6 @@ header {
   top: 174px;
   left: 25px;
 }
-  .humanImg {
-    top: 31%;
-    left: 24%;
-    height: 140px;
-  }
   .App{
     width: 266vw;
   }
@@ -1041,13 +1243,54 @@ header {
   .detail {
     font-size: 18px;
   }
-  .experienceCard {
-    width: 39%;
-  }
   .aboutContainer {
     width: 90%;
   }
   .footer{
     padding: 0px 24px;
+  }
+}
+
+.logo-container {
+  position: relative;
+  width: 540px;
+  height: 540px;
+  margin: 0 auto;
+  top: 15%;
+}
+
+.human-img {
+  position: absolute;
+  height: 207px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.portfolio-logo {
+  position: absolute;
+  height: 540px;
+  width: 540px;
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes autoFlip {
+  0%, 35% {
+    transform: rotateY(0);
+  }
+  45%, 85% {
+    transform: rotateY(0.5turn);
+  }
+  95%, 100% {
+    transform: rotateY(0);
   }
 }

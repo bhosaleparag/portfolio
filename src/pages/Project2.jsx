@@ -11,12 +11,12 @@ export default function Project2() {
     <>
       <p>Food Info</p>
       <div className="projectImg projectImg2">
-        <img src={search} className="projectImgsearch" />
-        <img src={foodHomePage} className="projectImgfoodHomePage" />
-        <img src={ingredient} className="projectImgingredient" />
-        <img src={dishes} className="projectImgdishes" />
-        <img src={foodDis} className="projectImgfoodDis" />
-        <img src={url} className="projectImgUrl" />
+        <img src={search} className="projectImgsearch" loading="lazy" />
+        <img src={foodHomePage} className="projectImgfoodHomePage" loading="lazy" />
+        <img src={ingredient} className="projectImgingredient" loading="lazy" />
+        <img src={dishes} className="projectImgdishes" loading="lazy" />
+        <img src={foodDis} className="projectImgfoodDis" loading="lazy" />
+        <img src={url} className="projectImgUrl" loading="lazy" />
       </div>
     </>
   );

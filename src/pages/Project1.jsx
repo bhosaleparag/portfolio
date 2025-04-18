@@ -12,13 +12,13 @@ export default function Project1() {
     <>
       <p>Typing Trainer</p>
       <div className="projectImg">
-        <img src={score} className="projectImgScore" />
-        <img src={navbar} className="projectImgNavbar" />
-        <img src={login} className="projectImgLogin" />
-        <img src={feedback} className="projectImgFeedback" />
-        <img src={game1} className="projectImgGame1" />
-        <img src={game2} className="projectImgGame2" />
-        <img src={setting} className="projectImgSetting" />
+        <img src={score} className="projectImgScore" loading="lazy" />
+        <img src={navbar} className="projectImgNavbar" loading="lazy" />
+        <img src={login} className="projectImgLogin" loading="lazy" />
+        <img src={feedback} className="projectImgFeedback" loading="lazy" />
+        <img src={game1} className="projectImgGame1" loading="lazy" />
+        <img src={game2} className="projectImgGame2" loading="lazy" />
+        <img src={setting} className="projectImgSetting" loading="lazy" />
       </div>
     </>
   );

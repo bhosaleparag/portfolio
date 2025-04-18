@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
 import Logo from "./pages/Logo";
-import humanImg from "./assets/human_log.png";
-import react from "./assets/react-2.svg";
 import aLogo from "./assets/arrow.svg";
 import Project1 from "./pages/Project1";
 import Project2 from "./pages/Project2";
@@ -10,13 +8,24 @@ import Experience from "./pages/Experience";
 function App() {
   const [scrollY, setScrollY] = useState(0);
   const [isButtonClicked, setIsButtonClicked] = useState([false, ""]);
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const newY = Math.round(window.scrollY / 60);
-      setScrollY(newY);
-    });
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const newY = Math.round(window.scrollY / 60);
+          setScrollY(newY);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  console.log(scrollY);
+
   const handleButtonClick = (val) => {
     setIsButtonClicked([!isButtonClicked[0], val]);
     setTimeout(() => {
@@ -46,7 +55,7 @@ function App() {
           <span className="mesHi">Hello There,</span>
           <span className="name">I'm Parag</span>
           <span className="discription">
-            Passionate React.js developer with a year of experience creating
+            Passionate React.js developer with a two year of experience creating
             clean, engaging interfaces. Eager to collaborate on innovative
             projects.
             <span className="fontColor"> Let's connect!</span>
@@ -58,12 +67,13 @@ function App() {
           }`}
         >
           <Logo />
-          <img src={humanImg} className="humanImg" />
         </div>
       </section>
       <section className="secondPage">
-        <div className={`roller ${scrollY >= 9 ? "falling" : ""}`}>
-          <img src={react} />
+        <div className="bubbles">
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="bubble"></div>
+          ))}
         </div>
         <header className={`${scrollY >= 1 ? "focus-in-contract" : ""}`}>
           Personal Projects
@@ -106,7 +116,6 @@ function App() {
         </div>
         <div className="project1">
           <div
-            style={{ backgroundColor: "#1c1d27" }}
             className={`projectCard ${scrollY >= 10 ? "slide-in-left" : ""}`}
           >
             <Project2 />
@@ -158,23 +167,13 @@ function App() {
         <Star/>
         <div className="aboutContainer">
         <p className="aboutMePara">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello there! I'm Parag Bhosale, and I hail from Dighanchi, my mother's
-          hometown. My childhood was predominantly spent there, and it's also
-          where I completed my high school education. When it came time for
-          graduation, I moved to Sangola, where I delved into the world of
-          programming languages. During my academic journey, I developed a keen
-          interest in coding, which eventually led me to a rewarding opportunity
-          at TCS (Tata Consultancy Services). My initial training took place in
-          Chennai, where I honed my coding skills and gained valuable insights.
-          Post-training, I embarked on a professional journey as a software
-          engineer, landing a role on the SBI project located in Navi Mumbai. In
-          this role, I specialize in utilizing technologies such as Git, Linux,
-          and my personal favorite, React JS. I find immense joy in working with
-          React and leveraging its capabilities to create innovative solutions.
-          I am passionate about continuously learning and growing in the dynamic
-          field of software development. My experiences have equipped me with a
-          solid foundation, and I look forward to contributing my skills and
-          expertise to future endeavors.
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hello there! I'm Parag Bhosale, a Senior Software Engineer based in Maharashtra. With a strong foundation in web development and a passion for creating innovative solutions, I specialize in React JS, JavaScript, and modern web technologies.
+
+          My professional journey includes significant experience at Tata Consultancy Services and Techhighway system Inc, where I've worked on diverse projects ranging from banking applications to real-time chat systems. I'm proficient in a wide range of technologies including Redux, Material UI, HTML, CSS, Rest API, Axios, Git, UI/UX Design, Firebase, Python, Linux, SVN, PVCS, and Jira.
+
+          I hold a B.Sc. in Computer Science from Punyashlok Ahilyadevi Holkar University, Solapur, with an impressive 9.32 CGPA. My academic background, combined with hands-on experience, has equipped me with the skills to tackle complex development challenges and deliver high-quality solutions.
+
+          I'm passionate about creating user-friendly applications and continuously expanding my technical expertise. Whether it's developing responsive UIs, implementing real-time features, or optimizing application performance, I'm always eager to take on new challenges and contribute to innovative projects.
         </p>
         </div>
       </section>
@@ -240,7 +239,7 @@ function App() {
           <ion-icon name="logo-linkedin"></ion-icon>
         </a></li>
     </ul>
-    <p>&copy;2023 Parag Bhosale | All Rights Reserved</p>
+    <p>&copy;2025 Parag Bhosale | All Rights Reserved</p>
     </div>
   </footer>
     </div>

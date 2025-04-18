@@ -17,7 +17,6 @@ const Cursor = () => {
     }else{
       cursor.className = 'cursor rounded'
     }
-    console.log();
     cursor.style.transform = `translate3d(${newX}px, ${newY}px, 0) rotate(42deg)`;
   };
   useEffect(() => {
