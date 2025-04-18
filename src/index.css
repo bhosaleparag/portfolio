@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 :root {
   font-family: Quicksand, system-ui, Avenir, Helvetica, Arial, sans-serif;
   color-scheme: light dark;
@@ -9,7 +13,7 @@
   --fontColor: #ffaf29;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  font-size: 21px;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -755,18 +759,18 @@ header {
 .row1,
 .row2,
 .row3 {
-  height: 249px;
-  left: 60px;
+  height: 230px;
+  left: 50px;
   top: -10px;
   box-shadow: 0 0 0.428vw 0 #4cd5fa inset, 0 0 0.428vw 0 #4cd5fa;
   border: 1px solid #4cd5fa42;
   position: absolute;
 }
 .row2 {
-  left: 120px;
+  left: 110px;
 }
 .row3 {
-  left: 180px;
+  left: 170px;
 }
 .red {
   color: #ffaf29;
@@ -1184,70 +1188,255 @@ header {
 }
 
 
-@media (max-width: 768px) {
-  :root{
-    font-size: 21px;
+@media (max-width: 500px) {
+  :root {
+    font-size: 14px;
   }
+
+  .App {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  header {
+    font-size: 45px;
+  }
+  .logo-container {
+    position: relative;
+    width: 300px !important;
+    height: 300px !important;
+    margin: 0 auto;
+    top: 0% !important;
+  }
+
+  .portfolio-logo {
+    position: absolute;
+    height: 300px !important;
+    width: 300px !important;
+    top: 0;
+    left: 0;
+    animation: spin 15s linear infinite;
+  }
+
+  .human-img {
+    position: absolute;
+    height: 115px !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 1;
+  }
+
   .firstPage {
-    width: 266vw;
-    height: 70vh;
+    flex-direction: column;
+    padding: 20px;
+    height: 80vh;
+    width: 100%;
   }
-  .mesHi {
-    font-size: 28px;
-    font-weight: 400;
+
+  .left {
+    width: 100%;
+    padding: 0px;
+    text-align: center;
   }
+
+  .right {
+    width: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .name {
-    font-size: 55px;
-    font-weight: 400;
+    font-size: 40px;
+    padding: 10px 0;
+    text-align: center;
   }
+
+  .mesHi {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .discription {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 0;
+  }
+
   .logo {
-  height: 400px;
-  width: 400px;
-  position: relative;
-  top: 5%;
-  left: -10%;
+    height: 250px;
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
   }
+
   .reactLogo {
-    height: 400px;
+    height: 250px;
   }
-  .htmlLogo {
-    top: 61px;
-    left: 105px;
-}
-.JSLogo {
-  top: 60px;
-  left: 230px;
-}
-.vsLogo {
-  top: 174px;
-  left: 25px;
-}
-  .App{
-    width: 266vw;
-  }
-  .gitLogo {
-    bottom: 59px;
-    height: 80px;
-    right: 110px;
-  }
-  .cssLogo {
-    top: 174px;
-    right: 50px;
-}
-.linuxLogo {
-  left: 103px;
-}
+
+  /* Adjust spinning logos */
   .htmlLogo, .JSLogo, .cssLogo, .gitLogo, .linuxLogo, .vsLogo {
-    height: 61px;
+    height: 40px;
+    position: absolute;
   }
+
+  .htmlLogo { top: 40px; left: 70px; }
+  .JSLogo { top: 40px; left: 160px; }
+  .vsLogo { top: 120px; left: 20px; }
+  .gitLogo { bottom: 40px; right: 70px; height: 50px; }
+  .cssLogo { top: 120px; right: 35px; }
+  .linuxLogo { bottom: 35px; left: 70px; height: 55px; }
+
+  /* Second Page */
+  .secondPage {
+    padding: 20px;
+  }
+
+  .project1 {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .projectCard {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
   .detail {
-    font-size: 18px;
+    height: auto;
+    font-size: 16px;
   }
+
+  /* Experience Section */
+  .thirdPage {
+    padding: 20px;
+    height: auto;
+  }
+
+  .experience-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+  }
+
+  .experienceCard {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .tataLogo {
+    width: 200px;
+    height: auto;
+    margin-left: 50px;
+  }
+
+  /* About Section */
+  .fourPage {
+    padding: 20px;
+    height: 130vh;
+  }
+
   .aboutContainer {
-    width: 90%;
+    width: 100%;
+    padding: 20px;
   }
-  .footer{
-    padding: 0px 24px;
+
+  .aboutMePara {
+    width: 100%;
+    font-size: 16px;
+    margin-top: 0px;
+  }
+
+  /* Achievement Section */
+  .fifthPage {
+    padding: 20px;
+    height: auto;
+  }
+
+  .achivementContent {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .achievement {
+    width: 100%;
+  }
+
+  .tcsRank {
+    width: 100%;
+    height: 720px;
+  }
+
+  .magic-matrix {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .row1,
+  .row2,
+  .row3 {
+    height: 210px;
+    width: 1px;
+    position: absolute;
+    top: 0;
+  }
+
+  .row1 {
+    left: 25%;
+  }
+
+  .row2 {
+    left: 50%;
+  }
+
+  .row3 {
+    left: 75%;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 50px;
+    padding: 0 20px;
+  }
+
+  .footerData {
+    text-align: center;
+  }
+
+  .footerDetail {
+    width: 100%;
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .social-icon {
+    margin: 5px 0;
+  }
+
+  .wave {
+    height: 70px;
   }
 }
 
