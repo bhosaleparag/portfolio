@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Parag Bhosale | React.js Developer</title>
+  <meta name="description" content="Portfolio of Parag Bhosale, a React.js and Next.js developer building fast, clean interfaces.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="glow"></div>
+
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#home">Parag<b>.</b></a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+      <a class="btn" href="#contact">Contact me</a>
+      <div id="bar"></div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero -->
+    <section id="home">
+      <div class="wrap hero">
+        <div>
+          <h1>Hello There,<span>I'm Parag</span></h1>
+          <div class="role" id="typed" aria-label="React.js Developer"></div>
+          <p class="lead">
+            I’m a Senior Software Engineer specializing in React.js, Next.js, and AI-powered application development.
+            I build scalable, high-performance products—from real-time communication and multiplayer systems to
+            AI-driven workflows and developer tools.
+            <a href="#contact">Let's connect.</a>
+          </p>
+          <div class="cta">
+            <a class="btn solid" href="#projects">See my work</a>
+            <a class="btn" href="mailto:paragbhosale06@gmail.com">Email me</a>
+          </div>
+        </div>
+        <div class="stage">
+          <img class="orbit" src="assets/orbit.webp" alt="" width="800" height="800">
+          <img class="boy" src="assets/boy.webp" alt="Illustration of Parag coding on a laptop" width="340" height="510">
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="wrap about">
+        <div class="rv">
+          <h2><small>Who I am</small>About me</h2>
+          <p>
+            I'm a Senior Software Engineer in Pune who turns complicated product ideas into interfaces people enjoy using.
+            I started at Tata Consultancy Services on the SBI Smart banking app and now lead frontend work at
+            Techhighway System Inc.
+          </p>
+          <p>
+            I’ve expanded into AI engineering, working with LLMs, RAG, AI agent(ReAct) and AI-powered application
+            workflows. I’m particularly interested in combining strong frontend engineering with practical AI
+            capabilities to build intelligent products.
+          </p>
+          <p>
+            I care about performance, reusable components and clear API contracts. Outside work I build side projects:
+            a multiplayer coding arena, a typing trainer, an Android app for farmers, and an AI chatbot widget powered by RAG.
+          </p>
+        </div>
+        <div class="stats rv">
+          <div class="stat"><b data-n="4" data-s="+">0</b><span>years building production React apps</span></div>
+          <div class="stat"><b data-n="30" data-s="+">0</b><span>REST APIs integrated with central error handling</span></div>
+          <div class="stat"><b data-n="9" data-s="+">0</b><span>languages supported with i18next</span></div>
+          <div class="stat"><b data-n="3" data-s="+">0</b><span>third-party integrations across production</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills (bubbles are generated in script.js from the SKILLS list) -->
+    <section id="skills">
+      <div class="wrap">
+        <div class="sk-head rv">
+          <h2><small>What I work with</small>Skills</h2>
+          <div class="legend" id="legend" aria-label="Filter skills by area">
+            <button type="button" data-g="fe" aria-pressed="false" style="--c:var(--ac)">Frontend</button>
+            <button type="button" data-g="be" aria-pressed="false" style="--c:var(--ac2)">Backend &amp; realtime</button>
+            <button type="button" data-g="ai" aria-pressed="false" style="--c:var(--ac3)">AI</button>
+            <button type="button" data-g="tools" aria-pressed="false" style="--c:#e7e9ee">Tools</button>
+          </div>
+        </div>
+        <div class="bubbles rv" id="bubbles" aria-hidden="true">
+          <p class="hint">Drag a bubble or push them around</p>
+        </div>
+        <div class="sk-static" id="skStatic"></div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="wrap">
+        <h2 class="rv"><small>Where I've worked</small>Experience</h2>
+        <div class="tl" id="tl">
+          <div class="tl-fill" aria-hidden="true"></div>
+
+          <div class="job">
+            <h3>Senior Software Engineer, Techhighway System Inc</h3>
+            <div class="meta">Apr 2024 to present, Pune</div>
+            <ul>
+              <li>Developed a real-time chat application supporting private messaging, group chats, and file sharing using React.js and Twilio, enabling seamless user communication.</li>
+              <li>Integrated 30+ REST APIs using Axios, implementing centralized authentication, error handling, and response management to ensure reliable data flow across the application.</li>
+              <li>Implemented third-party integrations including Nexus, World Transfer, and iCoupon APIs to support core business service operations.</li>
+              <li>Optimized frontend performance and scalability using lazy loading, code splitting, memoization, and debouncing, improving application responsiveness and user experience.</li>
+              <li>Built multi-language support using i18next (9+ languages) to enable localization and improve accessibility for global users.</li>
+              <li>Built an end-to-end passenger booking workflow with an airline-configurable UI, integrating QR code scanning and reading to speed up passenger verification.</li>
+              <li>Designed two distinct UI layouts that users can switch between from application settings, providing a flexible experience tailored to different user preferences.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <h3>Software Engineer, Tata Consultancy Services</h3>
+            <div class="meta">Nov 2022 to Apr 2024, Navi Mumbai</div>
+            <ul>
+              <li>Developed role-based UI screens for the SBI Smart application using React, enabling customized workflows for different user roles.</li>
+              <li>Built reusable UI components (forms, tables, modals, loaders, skeletons) and integrated multiple REST APIs using Axios with centralized error handling and interceptors.</li>
+              <li>Designed a dynamic PDF generation system that synced UI data in real time, enabling instant downloads and reducing manual work by 60%.</li>
+              <li>Collaborated with backend teams to define API contracts, resolve integration issues, and deliver features in Agile sprints while maintaining responsive UI.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="wrap">
+        <h2 class="rv"><small>Things I've built</small>Projects</h2>
+        <div class="grid" id="grid">
+
+          <article class="card">
+            <span class="wip">In progress</span>
+            <h3>Docket</h3>
+            <p>An AI chatbot widget designed to bring contextual answers into any web application using a retrieval-augmented generation workflow.</p>
+            <ul>
+              <li>Processes application or document content to build a searchable knowledge base</li>
+              <li>Uses embeddings and vector search to retrieve relevant context before generating responses</li>
+              <li>Designed as a reusable chat widget that can be integrated into different web applications</li>
+              <li>Focuses on grounded responses from the application's own content rather than generic answers</li>
+            </ul>
+            <div class="tags"><span>Next.js</span><span>RAG</span><span>openai APIs</span><span>LLM</span><span>Embeddings</span><span>Vector DB</span></div>
+          </article>
+
+          <article class="card">
+            <h3>Dev Battle</h3>
+            <p>A competitive coding platform combining individual practice with real-time multiplayer coding battles and social features.</p>
+            <ul>
+              <li>Built single-player challenges and live multiplayer battles with matchmaking and leaderboards</li>
+              <li>Used Socket.IO and Redis for real-time coding sessions, user presence, chat and synchronized game state</li>
+              <li>Added friends, achievements, levels and daily quizzes to create a broader competitive learning experience</li>
+              <li>Built high-performance pages with Next.js and integrated Firebase Authentication and Firestore for user and application data</li>
+            </ul>
+            <div class="tags"><span>Next.js</span><span>Socket.IO</span><span>Redis</span><span>Firebase</span></div>
+            <a class="live" href="https://github.com/bhosaleparag/dev-battle" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+          <article class="card">
+            <h3>Resume Reviewer</h3>
+            <p>An AI-powered resume analysis application that helps developers identify improvement areas and make their resumes more targeted for job applications.</p>
+            <ul>
+              <li>Accepts resume documents and processes their content for automated analysis</li>
+              <li>Uses an LLM-based workflow to evaluate resume sections and generate structured feedback</li>
+              <li>Highlights strengths, missing or weak areas, and actionable suggestions for improvement</li>
+              <li>Designed to turn resume review into a repeatable workflow instead of manual document checking</li>
+            </ul>
+            <div class="tags"><span>AI</span><span>LLM</span><span>Resume Analysis</span><span>React</span></div>
+            <a class="live" href="https://github.com/bhosaleparag/resume-reviewer" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+          <article class="card">
+            <h3>Linear Farm</h3>
+            <p>A high-contrast, farmer-friendly mobile app for farmers in Solapur, Maharashtra, fully localized in Marathi to make livestock management, local trade, and farm services easy to access.</p>
+            <ul>
+              <li>Built livestock management to register cows and buffaloes with breed, age, health status, and daily milk and weight tracking, backed by validated forms</li>
+              <li>Developed a community marketplace for buying and selling fodder, fertilizers, and livestock, with photo uploads, pricing, and seller contact details</li>
+              <li>Added on-demand booking for tractor rental, drone spraying, and farm labor with hourly rates</li>
+              <li>Created a guidance video library on organic farming, crop disease management, and modern technology, with category filters and search</li>
+              <li>Designed a home dashboard with milk yield and livestock stats, plus detailed farmer profiles with region-based village, taluka, and district selection</li>
+            </ul>
+            <div class="tags"><span>React Native</span><span>Expo</span><span>Zustand</span><span>TanStack Query</span><span>Firebase</span><span>Zod</span></div>
+            <a class="live" href="https://github.com/bhosaleparag/kisanapp" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+          <article class="card">
+            <h3>Typing Trainer</h3>
+            <p>A gamified typing practice application that helps users improve typing speed and accuracy through timed exercises, performance analytics, and persistent progress tracking.</p>
+            <ul>
+              <li>Built interactive typing sessions that track typing speed, accuracy, mistakes, and completion performance to provide measurable feedback</li>
+              <li>Implemented user-specific progress tracking with Firebase so performance and practice history persist across sessions</li>
+              <li>Used Redux for predictable state management across active typing sessions, results, and user progress</li>
+              <li>Designed a repeat-practice workflow focused on clear performance feedback and gradual improvement</li>
+            </ul>
+            <div class="tags"><span>React</span><span>Redux</span><span>Firebase</span></div>
+            <a class="live" href="https://github.com/bhosaleparag/typing-trainer-web" target="_blank" rel="noopener">View on GitHub</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <div class="wrap">
+        <h2 class="rv"><small>Where I studied</small>Education</h2>
+        <div class="edu rv">
+          <div><b>B.Sc. Computer Science</b><span>Punyashlok Ahilyadevi Holkar University, Solapur</span></div>
+          <div><b>9.32 CGPA</b><span>2019 to 2022</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="wrap rv">
+        <h2>Let's build something together</h2>
+        <p>I'm open to frontend and full-stack React roles and interesting side projects. Email is the fastest way to reach me.</p>
+        <a class="btn solid" href="mailto:paragbhosale06@gmail.com">paragbhosale06@gmail.com</a>
+        <div class="links">
+          <a href="https://github.com/bhosaleparag" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="tel:+919356289160">+91 93562 89160</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Parag Bhosale</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
